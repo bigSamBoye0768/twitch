@@ -37,6 +37,6 @@ export const Video = ({ hostName, hostIdentity }: { hostName: string, hostIdenti
 
 export const VideoSkeleton = () => {
     return (
-            <Skeleton className='border-b group relative aspect-video w-full'/>
+            <Skeleton className='border-b group relative rounded-none aspect-video w-full'/>
     )
 }

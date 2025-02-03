@@ -1,10 +1,10 @@
 "use client"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog'
 import { Button } from '@/components/ui/button'
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { IngressInput } from 'livekit-server-sdk'
 import { AlertTriangle } from 'lucide-react'
-import React, { useState, useTransition } from 'react'
+import { useState, useTransition } from 'react'
 import { createIngress } from '../../../../../../../../actions/ingress'
 import { toast } from 'sonner'
 

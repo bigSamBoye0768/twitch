@@ -2,8 +2,7 @@
 
 
 import { useSidebar } from '@/store/use-sidebar'
-import { Follow, Stream, User } from '@prisma/client'
-import React from 'react'
+import { Follow, User } from '@prisma/client'
 import { UserItem, UserItemSkeleton } from './user-item'
 
 export const Following = ({ data }: { data: (Follow & {following: User & {stream: {isLive: boolean} | null}})[] }) => {

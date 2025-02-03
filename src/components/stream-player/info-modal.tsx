@@ -13,7 +13,7 @@ interface InfoModalProps {
     initialThumbnailUrl: string | null;
 }
 
-export const InfoModal = ({ initialName, initialThumbnailUrl }: InfoModalProps) => {
+export const InfoModal = ({ initialName }: InfoModalProps) => {
     const closeRef = useRef<HTMLButtonElement>(null)
 
 

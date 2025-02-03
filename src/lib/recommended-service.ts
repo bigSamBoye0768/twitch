@@ -7,6 +7,8 @@ export const getRecommended = async () => {
     try {
         currUser = await getUserFromDb()
     } catch (error) {
+        console.log(error);
+
         currUser = null
     }
 
@@ -69,6 +71,8 @@ export const getRecommended = async () => {
 
 
     } catch (error) {
+        console.log(error);
+
         throw new Error('Something went wrong fetching all recommended users!')
     }
 }

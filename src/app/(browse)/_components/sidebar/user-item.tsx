@@ -5,17 +5,14 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { UserAvatar, UserAvatarSkeleton } from '@/components/user-avatar'
 import { cn } from '@/lib/utils'
 import { useSidebar } from '@/store/use-sidebar'
-import { User } from '@prisma/client'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import React from 'react'
 
 export const UserItem = ({ username, imgUrl, isLive }: { username: string | null, imgUrl: string, isLive?: boolean }) => {
-    const { collapsed, onCollapse, onExpand } = useSidebar((state) => state)
-    const pathname = usePathname()
+    const { collapsed } = useSidebar((state) => state)
+    // const pathname = usePathname()
     const href = `/${username}`
 
-    const isActive = pathname === href
+    // const isActive = pathname === href
 
     return (
         <Link href={href} className='w-full flex'>

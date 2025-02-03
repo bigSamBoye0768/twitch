@@ -28,6 +28,8 @@ export const isBlockedByUser = async (id: string) => {
         return !!blocked
 
     } catch (error) {
+        console.log(error);
+
         return false
     }
 

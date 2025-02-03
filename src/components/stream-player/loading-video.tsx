@@ -1,5 +1,4 @@
-import { Loader, WifiOff } from 'lucide-react'
-import React from 'react'
+import { Loader } from 'lucide-react'
 
 export const LoadingVideo = ({label}: {label:string}) => {
   return (

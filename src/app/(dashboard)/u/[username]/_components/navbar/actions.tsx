@@ -1,13 +1,11 @@
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
-import { SignInButton, UserButton } from '@clerk/nextjs'
-import { currentUser } from '@clerk/nextjs/server'
-import { Clapperboard, LogOut } from 'lucide-react'
+import { UserButton } from '@clerk/nextjs'
+import { LogOut } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
 
 export const Actions = async() => {
-    const user = await currentUser()
+    // const user = await currentUser()
 
   return (
     <div className='flex items-center'>

@@ -28,7 +28,7 @@ export const SecondNavItem: React.FC<Props> = ({ item }) => {
     const [isOpen, setIsOpen] = useState(false);
 
 
-    const { collapsed, onCollapse, onExpand } = useCreatorSidebar((state) => state)
+    const { collapsed } = useCreatorSidebar((state) => state)
     const pathname = usePathname()
 
     const isSettingsPath = pathname?.includes('/u/codewithsam/settings');

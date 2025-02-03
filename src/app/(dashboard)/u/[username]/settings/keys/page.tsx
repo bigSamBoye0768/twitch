@@ -1,6 +1,4 @@
-import { Button } from '@/components/ui/button'
-import React from 'react'
-import { UrlCard } from './_components/url-card'
+import { UrlCard } from './_components/url-card';
 import { getUserFromDb } from '@/lib/auth-service';
 import { getStreamByUserId } from '@/lib/stream.services';
 import { KeyCard } from './_components/key-card';

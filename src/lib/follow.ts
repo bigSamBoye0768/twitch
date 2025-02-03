@@ -26,6 +26,8 @@ export const isFollowingUser = async (id: string) => {
         return !!following
 
     } catch (error) {
+        console.log(error);
+
         return false
     }
 
@@ -151,6 +153,8 @@ export const getCurrUserFollowings = async () => {
 
         return followers
     } catch (error) {
+        console.log(error);
+
         return []
     }
     

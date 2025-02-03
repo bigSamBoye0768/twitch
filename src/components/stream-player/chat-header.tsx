@@ -19,15 +19,15 @@ export const ChatHeader = () => {
 
 
 export const ChatHeaderSkeleton = () => {
-  return(
+  return (
     <div className='border-b p-3 relative'>
-    <div className='absolute left-2 top-2 hidden lg:block'>
-      <Skeleton className='w-8 h-8'/>
+      <div className='absolute left-2 top-2 hidden lg:block'>
+        <Skeleton className='w-8 h-8' />
+      </div>
+      <Skeleton className='w-32 mx-auto h-7' />
+      <div className='absolute right-2 top-2 '>
+        <Skeleton className='w-8 h-8' />
+      </div>
     </div>
-    <Skeleton className='w-14 h-7'/>
-    <div className='absolute right-2 top-2 '>
-    <Skeleton className='w-8 h-8'/>
-    </div>
-  </div>
   )
 }

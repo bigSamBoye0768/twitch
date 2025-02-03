@@ -1,9 +1,7 @@
-import React, { useRef, useState, useTransition } from 'react'
+import React, { useRef, useState, useTransition } from 'react';
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
 import { Button } from '../ui/button';
 import { Label } from '../ui/label';
-import { Input } from '../ui/input';
-import { updateStream } from '../../../actions/stream';
 import { toast } from 'sonner';
 import { Textarea } from '../ui/textarea';
 import { updateUser } from '../../../actions/user';

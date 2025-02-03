@@ -32,9 +32,7 @@ export const StreamPlayer = ({ user, stream, isFollowing }: StreamPlayerProps) =
 
     if (!token || !name || !identity) {
         return (
-            <div>
-                <p className=''>Cannot Watch Stream</p>
-            </div>
+            <StreamPlayerSkeleton />
         )
     }
 
@@ -42,21 +40,21 @@ export const StreamPlayer = ({ user, stream, isFollowing }: StreamPlayerProps) =
         <>
             {
                 collapsed && (
-                    <div className="fixed top-[80px] right-2 hidden lg:block z-40">
+                    <div className="fixed top-[78px] right-2 hidden lg:block z-40">
                         <ChatToggle />
                     </div>
                 )
             }
 
             <LiveKitRoom token={token} serverUrl={process.env.LIVEKIT_WEBSOCKET_URL}
-                className={cn('grid grid-cols-1 gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 h-full', collapsed && "lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2")}>
+                className={cn('bg-[#F7F7F8] dark:bg-[#0E0E10] grid grid-cols-1 gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 h-full', collapsed && "lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2")}>
                 <div className='space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto pb-10 hidden-scrollbar'>
                     <Video hostName={user.username as string} hostIdentity={user.id} />
                     <Header imgUrl={user.imgUrl} name={stream.name} viewerIdentity={identity} hostName={user.username as string} isFollowing={isFollowing} hostIdentity={user.id} />
                     <InfoCard name={stream.name} viewerIdentity={identity} hostIdentity={user.id} thumbnail={stream.thumbnailUrl}/>
                 <AboutCard bio={user.bio} hostIdentity={user.id} viewerIdentity={identity} hostName={user.username as string} followersCount={user._count.followedBy}/>
                 </div>
-                <div className={cn("col-span-1 bg-white dark:bg-[#18181B] mt-0.5", collapsed && "hidden")}>
+                <div className={cn("col-span-1 lg:w-[400px] overflow-hidden lg:fixed right-0 bg-white dark:bg-[#18181B] mt-0.5", collapsed && "hidden")}>
                     <Chat hostName={user.username as string} hostIdentity={user.id} viewerName={name} isChatDelayed={stream.isChatDelayed} isChatEnabled={stream.isChatEnabled} isChatFollowersOnly={stream.isChatFollowersOnly} isFollowing={isFollowing} />
                 </div>
             </LiveKitRoom>

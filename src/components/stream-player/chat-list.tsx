@@ -7,7 +7,7 @@ export const ChatList = ({ messages, isHidden }: { messages: ReceivedChatMessage
     if (isHidden || !messages || messages.length <= 0){
         return(
             <div className='flex flex-1 items-center justify-center'>
-                <p className='text-sm'>{isHidden ? "Chat is disabled" : "Welcome to the chat room"}</p>
+                <p className='text-sm text-foreground/50'>{isHidden ? "Chat is disabled" : "Welcome to the chat room"}</p>
             </div>
         )
     }
@@ -24,9 +24,9 @@ export const ChatList = ({ messages, isHidden }: { messages: ReceivedChatMessage
 
 export const ChatListSkeleton = () => {
     return (
-        <div className='flex flex-1 flex-col-reverse h-full overflow-y-auto p-2'>
-           {[...Array(6)].map((message, index) => (
-                <Skeleton className='w-full h-4 md:w-32'/>
+        <div className='flex flex-1 gap-y-2 flex-col-reverse h-full p-2'>
+           {[...Array(6)].map((_, index) => (
+                <Skeleton className='w-full h-6 md:w-44' key={index}/>
                 ))}
         </div>
     )

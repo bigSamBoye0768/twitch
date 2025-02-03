@@ -16,12 +16,10 @@ export const useViewerToken = (hostIdentity: string) => {
                 setToken(viewerToken)
 
                 const decodeToken = jwtDecode(viewerToken) as JwtPayload & { name?: string }
-                console.log("decodeToken", decodeToken)
 
                 const name = decodeToken.name;
                 const identity = decodeToken.sub;
 
-                console.log({name, identity});
                 
 
                 if (identity) {

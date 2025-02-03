@@ -18,7 +18,7 @@ interface Props {
 
 export const FirstNavItem: React.FC<Props> = ({ name, url, icon: Icon, isActive }) => {
 
-    const { collapsed, onCollapse, onExpand } = useCreatorSidebar((state) => state)
+    const { collapsed } = useCreatorSidebar((state) => state)
 
 
     return (

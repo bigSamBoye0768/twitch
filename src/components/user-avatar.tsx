@@ -56,7 +56,7 @@ export const UserAvatar:React.FC<UserAvatarProps> = ({username, imgUrl, isLive, 
 
 
 
-interface UserAvatarSkeletonProps extends VariantProps<typeof avatarVariants> {};
+type UserAvatarSkeletonProps = VariantProps<typeof avatarVariants>;
 
 
 export const UserAvatarSkeleton:React.FC<UserAvatarSkeletonProps> = ({size}) => {

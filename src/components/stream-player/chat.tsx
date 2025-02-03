@@ -19,10 +19,10 @@ interface ChatProps {
     isChatFollowersOnly: boolean;
 }
 
-export const Chat = ({ hostName, hostIdentity, viewerName, isFollowing, isChatDelayed, isChatEnabled, isChatFollowersOnly }: ChatProps) => {
+export const Chat = ({ hostIdentity, isFollowing, isChatDelayed, isChatEnabled, isChatFollowersOnly }: ChatProps) => {
 
     const matches = useMediaQuery("(max-width:1024px)")
-    const { collapsed, variant, onExpand } = useChatSidebar((state) => state)
+    const { variant, onExpand } = useChatSidebar((state) => state)
     const connectionState = useConnectionState()
     const participant = useRemoteParticipant(hostIdentity)
     const isOnline = participant && connectionState === ConnectionState.Connected
@@ -57,7 +57,7 @@ export const Chat = ({ hostName, hostIdentity, viewerName, isFollowing, isChatDe
 
 
     return (
-        <div className='flex flex-col border-l border-b pt-0 h-[calc(100vh-4.3rem)]'>
+        <div className='flex w-full flex-col border-l border-b pt-0 h-[calc(100vh-4.3rem)]'>
             <ChatHeader />
             {variant === ChatVariant.CHAT && (
                 <>

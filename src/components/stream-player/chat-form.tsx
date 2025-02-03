@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Input } from '../ui/input';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
-import { AlertCircle } from 'lucide-react';
 import { Skeleton } from '../ui/skeleton';
 import { ChatInfo } from './chat-info';
 
@@ -59,7 +58,7 @@ export const ChatForm = ({ onChange, onSubmit, isDelay, isFollowerOnly, isFollow
 
 export const ChatFormSkeleton = () => {
     return (
-        <div className='flex flex-col items-center gap-y-3 p-2'>
+        <div className='flex flex-col items-center gap-y-1 p-2'>
             <Skeleton className='w-full h-10' />
             <div className='flex items-center gap-x-2 ml-auto'>
                 <Skeleton className='w-full h-8' />

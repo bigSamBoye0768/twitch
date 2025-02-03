@@ -2,8 +2,7 @@
 
 
 import { useSidebar } from '@/store/use-sidebar'
-import { Stream, User } from '@prisma/client'
-import React from 'react'
+import { User } from '@prisma/client'
 import { UserItem, UserItemSkeleton } from './user-item'
 
 export const Recommended = ({ data }: { data: (User & {stream: {isLive:boolean} | null})[] }) => {

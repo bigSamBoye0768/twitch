@@ -10,13 +10,13 @@ export const Thumbnail = ({ src, fallback, username, isLive }: { src: string | n
 
     if (!src) {
         content = (
-            <div className='bg-[#EFEFF1] dark:bg-[#1F1F23] flex flex-col items-center justify-center gap-y-3 h-full w-full transition-transform group-hover:translate-x-2 group-hover:-translate-y-2 rounded-md'>
+            <div className='bg-[#EFEFF1] dark:bg-[#1F1F23] flex flex-col items-center justify-center gap-y-3 h-full w-full transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 rounded-md'>
                 <UserAvatar size={'lg'} showBadge username={username} imgUrl={fallback} isLive={isLive} />
             </div>
         )
     } else {
         content = (
-            <Image src={src} fill alt={username} className='object-cover transition-transform group-hover:translate-x-2 group-hover:-translate-y-2 rounded-md' />
+            <Image src={src} fill alt={username} className='object-cover transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 rounded-md' />
         )
     }
 

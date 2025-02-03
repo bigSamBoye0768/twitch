@@ -16,6 +16,8 @@ export const getUserFromDb = async() => {
         if(!user) throw new Error('User not found')
         return user
     } catch (error) {
+        console.log(error);
+        
         throw new Error('Something went wrong!')
     }
 
@@ -39,6 +41,8 @@ export const getCurrUserByUsernameFromDb = async(username:string) => {
         if(currUser.username != user.username) throw new Error('Unauthorized')
         return user
     } catch (error) {
+        console.log(error);
+        
         throw new Error('Something went wrong!')
     }
 

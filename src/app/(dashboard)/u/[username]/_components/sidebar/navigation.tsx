@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import { SecondNavItem } from './second-nav-item'
 
 export const Navigation = () => {
-    const { isSignedIn, user } = useUser();
+    const { user } = useUser();
 
     const pathname = usePathname();
 

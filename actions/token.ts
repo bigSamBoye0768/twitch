@@ -7,7 +7,6 @@ import { AccessToken } from "livekit-server-sdk";
 import { v4 } from "uuid"
 
 export const createViewerToken = async(hostIdentity:string) => {
-    console.log('wassup yall');
 
     let curr; 
 
@@ -22,11 +21,9 @@ export const createViewerToken = async(hostIdentity:string) => {
     }
 
     
-    console.log("curr", curr);
     
 
     const host = await getUserById(hostIdentity)
-    console.log({host});
 
 
     if(!host){
@@ -40,7 +37,6 @@ export const createViewerToken = async(hostIdentity:string) => {
     }
 
     const isHost = curr.id === host.id;
-    console.log({isHost});
     
 
     const token = new AccessToken(
@@ -53,8 +49,7 @@ export const createViewerToken = async(hostIdentity:string) => {
 
 
     )
-    console.log("++++++++++++++++++++")
-    console.log({identity: isHost ? `host-${curr.id}`:curr.id})
+
 
     token.addGrant({
         room: host.id,
@@ -63,7 +58,6 @@ export const createViewerToken = async(hostIdentity:string) => {
         canPublishData:true
     })
 
-    console.log(await token.toJwt() );
     
 
     return await token.toJwt() 

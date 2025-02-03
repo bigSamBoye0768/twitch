@@ -8,6 +8,7 @@ export const getStreams = async () => {
         const currUser = await getUserFromDb()
         userId = currUser.id
     } catch (error) {
+        console.log(error);
         userId = null
     }
 
